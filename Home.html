@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="WANG Qi" />
+    <meta name="description" content="spotlight" />
+    <meta name="keywords" content="type, watch" />
+    <title>Home Page</title>
+    <link type="text/css" rel="stylesheet" media="all" href="../css/Home.css" />
+    <script type="text/javascript" src="http://courses.cs.cityu.edu.hk/cs2204/cs2204.js"></script>
+    <script type="application/x-javascript" src="../scripts/Home.js"></script>
+    <script type="text/javascript">
+        // The function init is called when the page is loaded
+        function init(){
+            switchSpot();       // It is defineed in the Home.js to switch the spotlight image
+            videoInfoShow();    // It is defined in the Home.js to randomly show the video information in the Must Watch block
+            handStyle();        // It is defined in the Hone.js to change the cursor to a "hand" style when the numbers in table are mouse-over
+        }
+        
+    </script>
+</head>
+
+<body onload="init();">
+    <h3>Home Page</h3>
+    <!-- Page Header -->
+    <header>
+        <img src="../images/movietag.jpg" class="logo" alt="The image cannot be shown." />
+        CITY CLASSIC VIDEO
+    </header>
+    <!-- Page Content -->
+    <div id="pageContent">
+        <h1>SPOTLIGHT</h1>
+        <img id="spot" src="../images/casablanca.jpg" class="photo" alt="The image cannot be shown." />
+        <div id="type">
+            <h2>SEARCH BY TYPE</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>By Country</th>
+                        <th>Drama</th>
+                        <th>Action</th>
+                        <th>Horror</th>
+                        <th>Romance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="country">Mainland China</td>
+                        <td onclick="videoInfoShow();">250</td>
+                        <td onclick="videoInfoShow();">50</td>
+                        <td onclick="videoInfoShow();">30</td>
+                        <td onclick="videoInfoShow();">178</td>
+                    </tr>
+                    <tr>
+                        <td class="country">UK</td>
+                        <td onclick="videoInfoShow();">78</td>
+                        <td onclick="videoInfoShow();">45</td>
+                        <td onclick="videoInfoShow();">129</td>
+                        <td onclick="videoInfoShow();">48</td>
+                    </tr>
+                    <tr>
+                        <td class="country">Hong Kong</td>
+                        <td onclick="videoInfoShow();">43</td>
+                        <td onclick="videoInfoShow();">178</td>
+                        <td onclick="videoInfoShow();">341</td>
+                        <td onclick="videoInfoShow();">50</td>
+                    </tr>
+                    <tr>
+                        <td class="country">Japan</td>
+                        <td onclick="videoInfoShow();">76</td>
+                        <td onclick="videoInfoShow();">40</td>
+                        <td onclick="videoInfoShow();">278</td>
+                        <td onclick="videoInfoShow();">96</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="watch">
+            <h2>MUST WATCH</h2>
+            <div id="multi-conlum1">
+                <div id="part1">
+                    <a href="Play.html?Casablanca" >
+                        <img src="../images/casablanca-icon.png" alt="The image cannot be shown." />
+                    </a>
+                    <p><span class="title">Casblanca</span> - the Morocco romance</p>
+                </div>
+                <div id="part2">
+                    <a href="Play.html?Wonders">
+                        <img src="../images/wonders.jpg" alt="The image cannot be shown." />
+                    </a>
+                    <p><span class="title">Wonders</span> - see the wonders of wild life</p>
+                </div>
+                <div id="part3">
+                    <a href="Play.html?Wildlife">
+                        <img src="../images/wildlife.jpg" alt="The image cannot be shown." />
+                    </a>
+                    <p><span class="title">Wildlife</span> - enjoy the spectacularviews of running wild lives</p>
+                </div>
+            </div>
+            <div id="multi-colunm2">
+                <div id="part4">
+                    <a href="Play.html?BigBuck">
+                        <img src="../images/bigbuck.jpg" alt="The image cannot be shown." />
+                    </a>
+                    <p><span class="title">Bigbuck</span> - make friends with cute animals</p>
+                </div>
+                <div id="part5">
+                    <a href="Play.html?Nature">
+                        <img src="../images/nature.jpg" alt="The image cannot be shown." />
+                    </a>
+                    <p><span class="title">Nature</span> - relax yourself in the great nature</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Footer -->
+    <footer>
+        <span>@Copyright 2017 - all rights reserved |</span>
+        <a href="Home.html">Home </a>
+        <span>| </span>
+        <a href="Design.html">Design</a>
+    </footer>
+</body>
+</html>

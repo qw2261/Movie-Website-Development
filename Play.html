@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="WANG Qi" />
+    <meta name="description" content="casablanca" />
+    <meta name="keywords" content="duration, cast, director, plot" />
+    <title>Play Page</title>
+    <link type="text/css" rel="stylesheet" media="all" href="../css/Play.css" />
+    <script type="text/javascript" src="http://courses.cs.cityu.edu.hk/cs2204/cs2204.js"></script>
+    <script type="text/javascript">
+        // This part is used to get the video title transfered through URL by Home.html
+        // Then the for-loop will check the title to find the target and renamed it to aimVideo
+        var getInfo=window.location.search.slice(window.location.search.lastIndexOf("?")+1);
+        allVideo = getVideo("all");
+        for(i=0; i<allVideo.length; i++){
+            if(getInfo == allVideo[i].title){
+                aimVideo = allVideo[i];
+                break;
+            }
+        }
+        
+        function init(){
+            videoLoad();
+        }
+        
+        // The videoLoad is used to display the video and its title and called when the page is loaded
+        function videoLoad(){
+            video = document.getElementById("video");
+            video.style.visibility = "visible";
+            video.innerHTML =
+            '<h2>' + aimVideo.title + '</h2>' +
+            '<video controls="controls"> oncanplay="videoInfoLoad();"' +
+            '<source src="http://courses.cs.cityu.edu.hk/cs2204/' + aimVideo.video[0] + '" type="video/mp4">' +
+            '<source src="http://courses.cs.cityu.edu.hk/cs2204/' + aimVideo.video[1] + '" type="video/ogg">' +
+            'Sorry. The video types are incompatible with your browser.' +
+            '</video>';
+            document.getElementById("realVideo").load();
+        }
+        // When the video is loaded and videoInfoLoad can generate the information
+        // It is used in oncanplay of video
+        function videoInfoLoad(){
+            info = document.getElementById("information");
+            info.style.visibility = "visible";
+            info.innerHTML =
+            '<p><span class="info">Duration:</span> ' + document.getElementsByTagName("video")[0].duration + ' seconds</p>'+
+            '<p><span class="info">Cast:</span> ' + aimVideo.cast + '</p>'+
+            '<p><span class="info">Director:</span> ' + aimVideo.director + '</p>'+
+            '<p>'+
+            '<span class="info">Plot:</span> '+
+            aimVideo.plot +
+            '</p>';
+        }
+        
+        
+    </script>
+</head>
+
+<body onload="init();">
+    <h3>Play Page</h3>
+    <!-- Page Header -->
+    <header>
+        <img src="../images/movietag.jpg" id="logo" alt="The image cannot be shown." />
+        CITY CLASSIC VIDEO
+    </header>
+    <!-- Page Content -->
+    <div id="pageContent">
+        <div id="video">
+            <h2>Casablanca</h2>
+            <video id="realVideo" controls="controls" oncanplay="videoInfoLoad();">
+                <source src="http://courses.cs.cityu.edu.hk/cs2204/casablanca-s.mp4" type="video/mp4">
+                <source src="http://courses.cs.cityu.edu.hk/cs2204/casablanca-s.ogg" type="video/ogg">
+                Sorry. The video types are incompatible with your browser.
+            </video>
+        </div>
+        <div id="information">
+            <p><span class="info">Duration:</span> 130 mins</p>
+            <p><span class="info">Cast:</span> Humphrey Bogart, Ingrid Bergmen</p>
+            <p><span class="info">Director:</span> Micharl Curtiz</p>
+            <p>
+                <span class="info">Plot:</span>
+                Casablanca is a 1942 American romantic drama film directed by Michael Curtiz and based on Murray Burnett and Joan
+                Alison's un-produced stage play Everybody Comes to Rick's. Set during World War II, it focus on a man torn between,
+                in the words of one character, "love and virtue". He mush choose between his love for a woman and helping her Czech
+                Resistance leader husband escape the Vichy-controlled Moroccan city of Casablanca to continue his fight against the
+                Nazi.
+            </p>
+        </div>
+        <div id="imagelist">
+            <p>RECOMMENDATIONS SIMILAR TO CASABLANCA</p>
+            <img onmouseover="this.style.cursor = 'pointer';" onclick="location.href = 'Play.html?Casablanca';" src="../images/casablanca-icon.png" alt="The image cannot be shown." />
+            <br />
+            <img onmouseover="this.style.cursor = 'pointer';" onclick="location.href = 'Play.html?Wonders';"    src="../images/wonders.jpg" alt="The image cannot be shown." />
+            <br />
+            <img onmouseover="this.style.cursor = 'pointer';" onclick="location.href = 'Play.html?Wildlife';"   src="../images/wildlife.jpg" alt="The image cannot be shown." />
+            <br />
+            <img onmouseover="this.style.cursor = 'pointer';" onclick="location.href = 'Play.html?BigBuck';"    src="../images/bigbuck.jpg" alt="The image cannot be shown." />
+            <br />
+            <img onmouseover="this.style.cursor = 'pointer';" onclick="location.href = 'Play.html?Nature';"     src="../images/nature.jpg" alt="The image cannot be shown." />
+        </div>
+    </div>
+    <!-- Page Footer -->
+    <footer>
+        <span>@Copyright 2017 - all rights reserved |</span>
+        <a href="Home.html">Home </a>
+        <span>| </span>
+        <a href="Design.html">Design</a>
+    </footer>
+</body>
+</html>

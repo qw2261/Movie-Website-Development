@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="author" content="WANG Qi" />
+    <meta name="description" content="City Classic Video" />
+    <meta name="keywords" content="classic, movie" />
+    <title>Index Page</title>
+    <link type="text/css" rel="stylesheet" media="all" href="../css/Index.css" />
+    <script type="text/javascript" src="http://courses.cs.cityu.edu.hk/cs2204/cs2204.js"></script>
+    <script type="text/javascript">
+        // To set the bottom of the form and the moving speed (in percentage)
+        var bot = -10;
+        var up = 1;
+        
+        // The init function will be useful when the page is loaded
+        function init(){
+            form = document.getElementById("formToSubmit");     // Get the form element by id
+            setTimeout(moveForm,3*1000);                        // Use the moveForm function after 3 seconds of page being loaded
+        }
+        
+        // To make form appear and call move function to move the form every 50 miliseconds
+        function moveForm(){            
+            form.style.visibility = "visible";                  
+            id = setInterval(move, 50);                         
+        }
+        // To use move function to generate the move-in effect and stop the moving when the bottom become 5%
+        function move(){
+            bot+=up;
+            form.style.bottom = bot + "%";
+            if(bot == 5){
+                clearInterval(id);
+            }
+            
+        }
+    </script>
+</head>
+
+<body onload="init();">
+    <h3>Index Page</h3>
+    <!-- Page Header -->
+    <header>
+        <img src="../images/movietag.jpg" class="logo" alt="The image cannot be shown." />
+        CITY CLASSIC VIDEO
+    </header>
+    <!-- Page Content -->
+    <div id="pageContent">
+        
+        <video autoplay="autoplay">
+            <source src="http://courses.cs.cityu.edu.hk/cs2204/wildlife.mp4" type="video/mp4" />
+            <source src="http://courses.cs.cityu.edu.hk/cs2204/wildlife.ogg" type="video/ogg" />
+            Sorry. The video types are incompatible with your browser.
+        </video>
+        <script type="text/javascript">
+            <!--
+            // This function is used to call the checkLogin function and generate error alert when false is returned
+            // It will be used as an event handler inside onsubmit of form
+            function toSubmitForm(){
+                userValue = document.getElementById("formToSubmit").name.value;
+                pwValue = document.getElementById("formToSubmit").password.value;
+                resultCheck = checkLogin(userValue,pwValue);
+                if(resultCheck){
+                    return true;
+                }
+                else{
+                    alert("Error!");
+                    return false;
+                }
+            }
+            -->
+        </script>
+        <form method="post" action="Home.html" id="formToSubmit" onsubmit="return toSubmitForm();">
+            
+            <fieldset>
+                <label id="name">Name:</label>
+                <input type="text" name="name" value="" class="input" />
+                <br />
+                <label id="password">Password:</label>
+                <input type="password" name="password" value="" class="input" />
+            </fieldset>
+            
+            <fieldset>
+                <input type="submit" value="Login" class="button" />
+                <input type="reset" value="Reset" class="button" />
+                <br />
+                <a id="Register" href="Index.html">Register</a>
+            </fieldset>
+            
+        </form>
+        
+    </div>
+    <!-- Page Footer -->
+    <footer>
+        <span>@Copyright 2017 - all rights reserved |</span>
+        <a href="Home.html">Home </a>
+        <span>| </span>
+        <a href="Design.html">Design</a>
+    </footer>
+    <div>
+        <p id="top"></p>
+        <p id="left"></p>
+        <p id="right"></p>
+        <p id="bottom"></p>
+    </div>
+</body>
+</html>
