@@ -1,0 +1,86 @@
+        h3{
+        font-family: monospace, cursive, sans-serif;
+        }
+        header{
+            border: 1px solid;
+            border-radius: 10px;
+            text-align: center;
+            font-family: monospace, cursive, sans-serif;
+            font-size: 2em;
+            background-color: white;
+            overflow: auto;
+        }
+        img.logo{
+            width: 10%;
+            position: relative;
+            margin: auto;
+        }
+        #pageContent{
+            border: 1px;
+            position: relative;
+        }
+        video{
+            position: relative;
+            top: 20px;
+            left: 5%;
+            right: 5%;
+            z-index: 0;
+            width: 90%;
+        }
+        form{
+            visibility: hidden;
+            position: absolute;
+            bottom: -10%;
+            left: 30%;
+            width: 40%;
+            z-index: 1;
+            height: 140px;
+            background-color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            padding: 1% 2% 2% 1%;
+        }
+        form > fieldset{
+            border: none;
+        }
+        label#name{
+            display: inline-block;
+            text-align: right;
+            width: 30%;
+            margin-left: 14%;
+        }
+        label#password{
+            display: inline-block;
+            text-align: right;
+            width: 30%;
+            margin-left: 14%;
+        }
+        .input{
+            width: 27%;
+        }
+        fieldset > input.input:focus{
+            background-color: grey;
+        }
+        .button{
+            width: 30%;
+            margin: auto;
+            text-align: center;
+            margin-left: 14%;
+        }
+        a#Register {
+            position: relative;
+            font-size: 14px;
+            text-align: center;
+            margin-left: 46%;
+            padding: 4px;
+        }
+        footer{
+            margin-top: 20px;
+            text-align: center;
+            font-size: 10px;
+            padding: 1px;
+        }
+        a:hover {
+            text-decoration: none;
+        }

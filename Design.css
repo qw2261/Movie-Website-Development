@@ -1,0 +1,48 @@
+    h3{
+        font-family: monospace, cursive, sans-serif;
+        text-align: center;
+        font-size: 30px;
+    }
+    div#layout_theme{
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: grey;
+        width:70%;
+        margin: auto;
+    }
+    h1{
+        text-align: center;
+        font-family: monospace, cursive, sans-serif;
+        color: white;
+    }
+    ul{
+        font-family: cursive, sans-serif;
+        color: white;
+        font-size: 20px;
+    }
+    div#acknowledgement{
+        border: 1px solid;
+        border-radius: 10px;
+        background-color: grey;
+        width: 70%;
+        margin: auto;
+        margin-top: 10px;
+    }
+    li{
+        font-family: monospace, cursive, sans-serif;
+        color: white;
+        font-size: 20px;
+    }
+    span.title{
+            font-style: oblique;
+            font-weight: bold;
+            color: #FF00FF;
+        }
+    footer{
+            text-align: center;
+            padding: 1px;
+            font-size: 10px;
+          }
+    a:hover{
+            text-decoration: none;
+        }
